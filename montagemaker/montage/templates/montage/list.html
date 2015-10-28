@@ -6,24 +6,24 @@
     </head>
     <body>
     <!-- List of uploaded documents -->
-    {% if documents %}
+    {% if montages %}
         <ul>
-        {% for document in documents %}
-            <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+        {% for montage in montages %}
+            <li><a href="{{ montage.video_file.url }}">{{ montage.vide_file.name }}</a></li>
         {% endfor %}
         </ul>
     {% else %}
-        <p>No documents.</p>
+        <p>No montages.</p>
     {% endif %}
 
         <!-- Upload form. Note enctype attribute! -->
         <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
-            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+            <p>{{ form.video_file.label_tag }} {{ form.video_file.help_text }}</p>
             <p>
-                {{ form.docfile.errors }}
-                {{ form.docfile }}
+                {{ form.video_file.errors }}
+                {{ form.video_file }}
             </p>
             <p><input type="submit" value="Upload" /></p>
         </form>

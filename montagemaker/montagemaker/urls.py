@@ -5,4 +5,4 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('',
     (r'^', include('montage.urls')),
-) + static(settings.MEDIA_URL, montage_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

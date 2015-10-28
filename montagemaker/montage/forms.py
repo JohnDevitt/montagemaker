@@ -6,3 +6,9 @@ class MontageUploadForm(forms.Form):
         label='Select a file',
         help_text='max. 42 megabytes'
     )
+
+class VideoUploadForm(forms.Form):
+	video_file = forms.FileField(
+		label='select a file',
+		help_text='max. 42 megabytes'
+	)
